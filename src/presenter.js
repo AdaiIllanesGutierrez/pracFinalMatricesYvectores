@@ -1,15 +1,13 @@
-import sumar from "./sumador";
+import {titulo,contenido,posts}from "./vectores.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
-
+const palabra = document.querySelector("#titulo");
+const form = document.querySelector("#form_Post");
+const div = document.querySelector("#publicaciones");
+let p=[];
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  
+  p.push(palabra.value);
+  
+    div.innerHTML += titulo(p);
 });
